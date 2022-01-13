@@ -9,13 +9,16 @@ body {
 
 
 .not-mode-container {
-    position: absolute;
-    bottom: 0px;
-    left: 30%;
-    height: 50px;
-    width: 50px;
-    background: purple;
+    margin-top: 10%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: EditorSans;
+    font-size: 1vh;
+    border: solid 1px #000;
     z-index: 10;
+
 }
 
 .container {

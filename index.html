@@ -34,31 +34,38 @@
                 
                 switch (true) {
                     case (currentMousePos.x <= (windowWidth * 0.4) && currentMousePos.y <= (windowHeight / 5)):
-                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        $(".container").addClass("size2")
+                        $(".container").removeClass("size1")
                         break;
 
                     case (currentMousePos.x <= (windowWidth * 0.4) && currentMousePos.y >= (windowHeight / 5)):
-                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        $(".container").addClass("size2")
+                        $(".container").removeClass("size1")
                         break;
 
                     case (currentMousePos.x >= (windowWidth * 0.7) && currentMousePos.y <= (windowHeight / 5)):
-                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        $(".container").addClass("size2")
+                        $(".container").removeClass("size1")
                         break;
 
                     case (currentMousePos.x >= (windowWidth * 0.6) && currentMousePos.y >= (windowHeight / 5)):
-                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        $(".container").addClass("size2")
+                        $(".container").removeClass("size1")
                         break;
 
                     case (currentMousePos.y <= (windowWidth / 5)):
-                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        $(".container").addClass("size2")
+                        $(".container").removeClass("size1")
                         break;
 
                     case (currentMousePos.y >= (windowWidth * 0.4)):
-                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        $(".container").addClass("size2")
+                        $(".container").removeClass("size1")
                         break;
 
                     default:
-                        $(".container").css({transform:"scale(1, 1)"})
+                        $(".container").removeClass("size2")
+                        $(".container").addClass("size1")
                         break;
                 }  
             })
@@ -122,6 +129,21 @@
                     return n;
                 })
             }
+
+
+
+            $(".not-mode-container").mouseover(function(){
+                $(this).css({background:""})
+                $(".container").addClass("size1")
+                $(".container").removeClass("size2")    
+            })
+
+            $(".not-mode-container").mouseleave(function(){
+                $(this).css({background:""})
+                $(".container").removeClass("size1")
+                $(".container").addClass("size2")    
+            })
+
         })
     </script>
     
@@ -132,9 +154,6 @@
     
 
 <div class="container">
-    <div class="not-mode-container">
-        
-    </div>
 <div class="container-bg"></div>
     <div class="section section-1">
         <div class="section-main">
@@ -220,6 +239,9 @@
         <div class="article-info">
             <div class="author">by David Greaber</div>
             <div class="date">March 12, 2017</div>
+        </div>
+        <div class="not-mode-container border">
+            notation modes
         </div>
     </div>
     <div class="section section-6">

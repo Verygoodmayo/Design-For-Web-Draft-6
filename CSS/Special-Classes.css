@@ -10,3 +10,11 @@
     left: 0;
     right: 0;
 }
+
+
+.size2 {
+    transform: scale(2.5,2.5);
+}
+.size1 {
+    transform: scale(1,1);
+}
