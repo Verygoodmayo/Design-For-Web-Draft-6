@@ -6,3 +6,19 @@
     font-family: Sans-bold;
     src: url(../Fonts/ABCFavoritExtended-Bold-Trial.otf);
 }
+@font-face {
+    font-family: edit;
+    src: url(../Fonts/EditorSans-Light.otf);
+}
+@font-face {
+    font-family: edit-bold;
+    src: url(../Fonts/EditorSans-Bold.otf);
+}
+@font-face {
+    font-family: coo;
+    src: url(../Fonts/Cooper\ Std\ Black.ttf);
+}
+@font-face {
+    font-family: coo-bold;
+    src: url(../Fonts/cooprblk.ttf);
+}

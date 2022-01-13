@@ -18,3 +18,8 @@
 .size1 {
     transform: scale(1,1);
 }
+
+
+.removeTrans {
+    transition: 0;
+}
