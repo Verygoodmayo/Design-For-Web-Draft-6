@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.8s ease;
+}
+body {
+    overflow: hidden;
+}
+
+
+.not-mode-container {
+    position: absolute;
+    bottom: 0px;
+    left: 30%;
+    height: 50px;
+    width: 50px;
+    background: purple;
+    z-index: 10;
+}
+
+.container {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0px 0px;
+    display: grid;
+    grid-template-columns: var(--columns);
+    grid-template-rows: var(--rows);
+    transition-timing-function: ease;
+    transition: 1s;
+    z-index: 0;
+    background:#fff;
+}
+.container-bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-image: url(../BG/BG7.png);
+    background-repeat: repeat;
+    background-size: 40px 40px;
+    z-index: 1;
+}
+.section {
+    position: relative; 
+    z-index: 2;
+}
+.section-main {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.section-underline {
+    position: absolute;
+    top: 17.5%;
+    background: #000;
+    width: 95%;
+    height: 1px;
+    left: 5%;
+}
+.section-header {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    text-align: left;
+    padding-left: 5%;
+    font-family: cooper;
+    font-weight: 300;
+    font-size: 4.5vh;
+    color: #000;
+}
+.start-icon {
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    height: 30%;
+    width: 3%;
+}
+.start-line {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:50%;
+    width: 1px;
+    background: #000;
+}
+.start-line:nth-child(1) {
+    top: 30%;
+    transform: rotate(45deg);
+}
+.start-line:nth-child(2) {
+    top: -25%;
+    transform: rotate(-45deg);
+}
+.section-header-name {
+    margin-left: 50px;
+}
+.section-text-container {
+    flex: 9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+.section-para {
+    position: relative;
+    margin-left: 5%;
+    height: 90%;
+    width: 95%;
+}
+.section-para>p {
+    position: relative;
+    font-size: 0.9vh;
+    font-family: editorsans;
+    font-weight: 300;
+    color: #000;
+    line-height: 1.5vh;
+    margin-bottom: 10px;
+    z-index: 444;
+}
+.section-para>p:last-of-type {
+    margin-bottom: 0px;
+}
+    
+
+
+.section-1>.section-main>.section-header {
+    flex: 1;
+}
+.section-1>.section-main>.section-text-container {
+    flex: 9;
+}
+.section-2>.section-main>.section-header {
+    position: relative;
+    width: 200%;
+}
+.section-2>.section-main>.section-underline {
+    width: 160%;
+}
+.section-3>.section-main>.section-text-container>.section-para:nth-child(1) {
+    flex: 6;
+}
+.section-3>.section-main>.section-text-container {
+    flex-direction: row-reverse;
+}
+.section-3>.section-main>.section-header {
+    margin-top: 30px;
+}
+.section-3>.section-main>.section-text-container>.section-para:nth-child(2) {
+    flex: 4;
+}
+.section-4 {
+    z-index: 5;
+}
+.section-5 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-6>.section-main>.section-text-container {
+    flex: 1;
+}
+.section-6>.section-main>.section-underline {
+   top: 0%;
+}
+
+
+
+
+.article-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: editorsans;
+    font-size: 6.4vh;
+    font-weight: 300;
+    margin-top: 20px;
+    position: relative;
+    perspective: 1000;
+}
+.title {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+.article-info {
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+.author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: editorsans;
+    font-weight: 700;
+    font-size: 1.2vh;
+}
+.date {
+    text-align: right;
+    font-family: editorsans;
+    font-size: 1.2vh;
+}
+
+
+
+.notation {
+    position: fixed;
+    bottom: -50%;
+    height: 50%;
+    width: 100%;
+    z-index: 3;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    z-index: 5;
+}
+.not-main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.not-header {
+    flex: 1.5;
+    position: relative;
+    align-self: center;
+    width: 91%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+.not-header-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Sans;
+    font-size: 1.3vh;
+    letter-spacing: 5px;
+}
+.article-section-name {
+    font-family: cooper;
+    letter-spacing: 1px;
+    margin-right: 10px;
+
+}
+
+.not-text {
+    flex: 8.5;
+}
+.not-text>p {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-top: 20px;
+    font-family: editorsans;
+    font-size: 1.5vh;
+    line-height: 2.5vh;
+}
+.not-img {
+   flex: 1;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 100% auto;
+}
+.notation0>.not-img {
+    background-image: url(../IMG/DG2.jpg);
+}
+.notation1>.not-img {
+    background-image: url(../IMG/CourtDress.jpeg);
+}
+.notation2>.not-img {
+    background-image: url(../IMG/RevolutionSuit.png);
+}
+.notation3>.not-img {
+    background-image: url(../IMG/FoxHunter.jpg);
+}
+.notation4>.not-img {
+    background-image: url(../IMG/Skirts.png);
+    background-position: bottom center;
+}
+
+.not-img>img {
+    float: right;
+    width: 100%;
+    height: auto;
+}
+
+.link {
+    font-weight: 700;
+}
+.link:hover {
+    cursor: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.75 15.75'%3e%3cdefs%3e%3cstyle%3e.cls-1%7bfill:none;stroke:%23000;stroke-miterlimit:10;stroke-width:0.75px;%7d%3c/style%3e%3c/defs%3e%3cg id='Layer_2' data-name='Layer 2'%3e%3cg id='Layer_1-2' data-name='Layer 1'%3e%3ccircle class='cls-1' cx='7.88' cy='7.88' r='7.5'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e"), auto;
+    color: rgb(255, 0, 119);
+}

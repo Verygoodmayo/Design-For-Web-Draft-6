@@ -1,0 +1,5 @@
+:root {
+    --containerSize: 200%;
+    --columns: 1fr 0.5fr 1fr;
+    --rows: 1fr 1fr 1fr;
+}

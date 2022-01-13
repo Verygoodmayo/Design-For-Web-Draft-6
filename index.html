@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Page Title</title>
+   
+    <link rel="stylesheet" type="text/css" href="./CSS/Root.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/Special-Classes.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/Animations.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/Fonts.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/Style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+            var XMid = windowWidth / 2;
+            var YMid = windowHeight / 2;
+            var currentMousePos = {x: -1, y: -1};
+
+            $(document).mousemove(function(event) {
+                currentMousePos.x = event.pageX;
+                currentMousePos.y = event.pageY;
+
+                var transX = currentMousePos.x - 15
+                var transY = currentMousePos.y - 15
+                $(".container").css({transformOrigin:transX + "px " + transY + "px" })
+                
+                switch (true) {
+                    case (currentMousePos.x <= (windowWidth * 0.4) && currentMousePos.y <= (windowHeight / 5)):
+                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        break;
+
+                    case (currentMousePos.x <= (windowWidth * 0.4) && currentMousePos.y >= (windowHeight / 5)):
+                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        break;
+
+                    case (currentMousePos.x >= (windowWidth * 0.7) && currentMousePos.y <= (windowHeight / 5)):
+                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        break;
+
+                    case (currentMousePos.x >= (windowWidth * 0.6) && currentMousePos.y >= (windowHeight / 5)):
+                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        break;
+
+                    case (currentMousePos.y <= (windowWidth / 5)):
+                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        break;
+
+                    case (currentMousePos.y >= (windowWidth * 0.4)):
+                        $(".container").css({transform:"scale(2.5, 2.5)"})
+                        break;
+
+                    default:
+                        $(".container").css({transform:"scale(1, 1)"})
+                        break;
+                }  
+            })
+
+            var n = 1
+            var bgArray = ["royalblue","lightsalmon", "lightseagreen", "violet", "khaki", "darkcyan" ]
+            var textColors = ["white","lightcoral","blue","lightgrey", "darkcyan", "white"]
+            var links = document.querySelectorAll(".link")
+            var nots = document.querySelectorAll(".notation")
+            for (let i = 0; i < links.length; i++) {
+                $(links[i]).click(function(){
+                    switch (n) {
+                        case 1:
+                            $(".notation").css({bottom:"-50.5%"})
+                            $(nots[i]).css({bottom:"0%"})
+                            $(".container").css({background:bgArray[i]})
+                            $(".container>.section>.section-main>.section-text-container>.section-para>p").css({color:textColors[i]})
+                            $(".container>.section>.section-main>.section-header").css({color:textColors[i]})
+                            $(".container>.section>.section-main>.section-underline").css({background:textColors[i]})
+                            $(".title").css({color:textColors[i]})
+                            $(".author").css({color:textColors[i]})
+                            $(".date").css({color:textColors[i]})
+                            n++
+                            return n;
+                            break;
+                    
+                        case 2: 
+                            $(".notation").css({bottom:"-50%"})
+                            $(".container").css({background:"#fff"})
+                            $(".container>.section>.section-main>.section-text-container>.section-para>p").css({color:"#000"})
+                            $(".container>.section>.section-main>.section-header").css({color:"#000"})
+                            $(".container>.section>.section-main>.section-underline").css({background:"#000"})
+                            $(".title").css({color:"#000"})
+                            $(".author").css({color:"#000"})
+                            $(".date").css({color:"#000"})
+                            n--
+                            return n;
+                            break;
+
+                        default:
+
+                            break;
+                    }
+                    
+                })
+
+                
+            }
+
+            for (let i = 0; i < nots.length; i++) {
+                $(nots[i]).mouseleave(function(){
+                    $(".notation").css({bottom:"-50%"})
+                    $(".container").css({background:"#fff"})
+                            $(".container>.section>.section-main>.section-text-container>.section-para>p").css({color:"#000"})
+                            $(".container>.section>.section-main>.section-header").css({color:"#000"})
+                            $(".container>.section>.section-main>.section-underline").css({background:"#000"})
+                            $(".title").css({color:"#000"})
+                            $(".author").css({color:"#000"})
+                            $(".date").css({color:"#000"})
+                    n = 1;
+                    return n;
+                })
+            }
+        })
+    </script>
+    
+</head>
+<body>
+
+
+    
+
+<div class="container">
+    <div class="not-mode-container">
+        
+    </div>
+<div class="container-bg"></div>
+    <div class="section section-1">
+        <div class="section-main">
+            <div class="section-header"><div class="start-icon"><div class="start-line"></div><div class="start-line"></div></div><span class="section-header-name">introduction</span></div>
+            <div class="section-underline"></div>
+            <div class="section-text-container">
+                <div class="section-para">
+                    <p>
+                        Some people (<span class="link link0">me</span>, for instance) put a great deal of energy into organizing their lives so that they’ll never have to wear a tie. I’ve often wondered why this should be. Why should ties have such symbolic power? It’s not as if other parts of a formal suit—white shirts, tailored slacks, vests, or blazers—inspire the same sort of indignation. Somehow, it feels as if tying the necktie around your neck marks a final act of closure. It’s the act that transforms all those items into a suit, with all the suit implies, whether it’s the power of the boardroom or the ceremonial formalities of weddings and funerals—that whole world of official business over which men in suits invariably preside. No doubt, part of the objection to the tie is to the pure arbitrariness of the thing. A tie serves no function. It doesn’t hold your trousers up or keep you warm.
+                    </p>
+                </div>
+                <div class="section-para">
+                    <p>
+                        But at the same time, it’s uncomfortable, so much so that putting it on does somehow feel like a gesture of submission, a reluctant pledge of allegiance to everything the suit is supposed to represent. <br><br> Still, if you think more about it, there’s something peculiar going on here—a kind of paradox. Yes, a tie embodies the message of the suit, but in many ways it’s the very opposite. After all, the rest of the suit is almost entirely bereft of decorative elements. Suits tend to be dark, sober, boring. Ties are supposed to be the exception. The tie is the one place where you’re allowed to add a little color, to express yourself a little. Why, then, should the one thing that’s least like the rest of the suit somehow feel like it embodies the message of the whole?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-2">
+        <div class="section-main">
+            <div class="section-header">Part 2: The Frail Gaze</div>
+            <div class="section-underline"></div>
+            <div class="section-text-container">
+                <div class="section-para">
+                    <p>
+                        It seems to me that this very effacement of individuality is itself one way of expressing power. The French philosopher Michel Foucault argued that the eighteenth century (the period that saw the emergence of the business suit) marked a profound transformation in how power came to be exercised in Europe and America. In a feudal order, Foucault suggested, power existed in order to be seen. It was enshrined in the very bodies of the king and nobles, which were on continual display in portraits, pageants, and court ceremonial. Common folk were faceless spectators. The modern bureaucratic state reversed all this: suddenly, it was the powerful who were faceless, depersonalized abstractions, as it was they who did the inspecting, examining, and monitoring of everybody else.
+                    </p>
+
+                    <p>
+                        What Foucault was really talking about were two different modes of exercising power that always exist, in any society. Sometimes the general struts about showing off his medals, and sometimes he’s inspecting the troops, who are expected to keep eyes fixed firmly into space. Indeed, the most powerful way to represent power has always been to refuse to represent it. That’s why God or spirits in so many traditions cannot be shown in images;
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="section-main">
+            <div class="section-text-container">
+                <div class="section-para">
+                    <p>
+                         Women’s formal attire, with its flounces and fripperies, sequins and whatnots, defines its wearer as something that you look at, as a passive object, but at the same time makes her bodily, specific, and even unique. (The word “specific” is originally derived from the Latin specere, meaning “to look at.” It’s the same root as gives us “spectacle,” “inspection,” and “specimen.”) John Berger’s famous analysis of European oil painting, Ways of Seeing, noticed that the social presence of a man in such quintessentially bourgeois settings always turned on what he was assumed to be able to do (the “promise of power” he embodied), while that of a woman turned on her appearance, which was taken to indicate how she has treated herself—and therefore what it is acceptable to do to her. Robert Graves summed it up even more precisely; in the world those oil paintings represent, “Man Does; Woman Is.” (Only it’s not clear that Graves meant this as a criticism!)
+                    </p> 
+                </div>
+                <div class="section-para"></div>
+            </div>
+            <div class="section-header">Part 3: Semiotics of the Barn Door, Open</div>
+        </div>
+    </div>
+    <div class="section section-4">
+        <div class="section-main">
+            <div class="section-header">Part 1: Ready, Aim, Attire</div>
+            <div class="section-underline"></div>
+            <div class="section-text-container">
+                <div class="section-para">
+                    <p>
+                        Formal male clothing wasn’t always boring. In Elizabethan times, for instance, men—particularly rich and powerful ones—were just as inclined as women to deck themselves out in flashy jewelry and bright decorative colors, and even (as in the court of <span class="link link1">Louis XIV</span>) to wear wigs, powder, and rouge. All this changed in the eighteenth century, a period some historians of dress have referred to as the age of the “Great Masculine Renunciation.” Suddenly, male clothing was expected to be less ornamental, more generally businesslike than women’s. Eventually, something very much like the modern business suit began to emerge: uniform, dark in color (the more serious the context, the darker it should be) with little or no patterning—its very dullness embodying seriousness of purpose.
+                    </p>
+
+                    <p>
+                        The modern business suit appeared around the time of the <span class="link link2">Industrial Revolution</span>, and it embodied the spirit of the emerging bourgeoisie. Such men scoffed at aristocratic fops as parasites. They saw themselves instead as men of action, defined by their ability to direct and transform the world. They were producers; aristocrats were mere consumers. And in this new bourgeois order, consumption was to be the domain of women, who continued to wear powder, lipstick, necklaces, and earrings (though usually not quite so extravagantly), even as their husbands gave them up.
+                    </p>
+
+                    <p>
+                        This transformation explains a number of curious usages surviving in our own formal clothing: notably, the way a blazer can still be referred to as “sports jacket,” even though you wouldn’t want to run a race in one. In fact, the business suit derives not from aristocratic formal wear, but from hunting clothes—this is why <span class="link link3">fox-hunters</span>, for instance, still wear something very much like one. Both uniforms are a kind of active wear, adopted by a class of people who wanted to define themselves through their actions.
+                    </p>
+                </div>
+                <div class="section-para">
+                    <p>
+                        Actually, I suspect that the ultimate derivation of the business suit is from a suit of armor. The suit, after all, encases your body, covering as much of it as possible; what minimal openings to the world such clothes do afford—at your neck and sleeves—are bound tightly together by ties and cuff links. The contours of the body are thus obscured, in striking contrast with women’s formal wear, which, even in covering the body, constantly hints at revealing it, and particularly at revealing its most sexualized aspects. <span class="link link4">Skirts</span>, even when they cover the lower half of the body completely, tend to form an open-ended cone whose apex is between the legs, and except in the most prudish times, there has been some gesture toward revealing the cleavage. It’s almost as if the staid uniformity of men’s attire is meant to efface individuality just as its design is meant to make the body itself invisible; women’s formal wear, on the other hand, makes the wearer both an individual and an object to be seen. Indeed, the conventions of higher-class fashion ensure that any woman wearing such an outfit is obliged to devote a good deal of time and energy to monitoring herself to make sure too much is not revealed and, more generally, to constantly thinking about what she looks like.
+                    </p>
+                    
+                    <p>
+                        And this is still true. Just recall the bifurcated fashions at the sexual battleground of your high school prom. The guys all dressed identically. They were, in effect, sporting a uniform. But if two girls wound up wearing the same dress, then oh, what a scandal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-5">
+        <div class="article-title"><div class="title">Dickheads</div></div>
+        <div class="article-info">
+            <div class="author">by David Greaber</div>
+            <div class="date">March 12, 2017</div>
+        </div>
+    </div>
+    <div class="section section-6">
+        <div class="section-main">
+            <div class="section-underline"></div>
+            <div class="section-text-container">
+                <div class="section-para">
+                    <p>
+                        So what does any of this have to do with neckties? Well, at first glance, the paradox has only deepened. If the message of the suit is that its wearer is a largely invisible, abstract, and generic creature to be defined by his ability to act, then the decorative necktie makes little sense.
+                    </p>
+
+                    <p>
+                        But let’s examine other forms of decoration allowed in formal attire and see if a larger pattern of sartorial power begins to emerge. Decoration that’s specific to women (earrings, lipstick, eyeshadow, etc.) tends to highlight the receptive organs. Permissible men’s jewelry—rings, cuff links, fancy watches—tends to accentuate the hands. This is, of course, consistent: it is through the hands that one acts upon the world. There’s also the tie clip, but that’s not really a problem. The tie and the cuff links seem to fulfill their functions in parallel, each adding a little decoration to tighten a spot where human flesh sticks out, namely the neck and wrists. They also help seal off the exposed bits from the remainder of the body, which remains effaced, its contours largely invisible.
+                    </p>
+
+                    <p>
+                        This observation, I think, points the way to the resolution of our paradox. After all, the male body in a suit does contain a third potentially obtrusive element that is most definitely not exposed, something that, in fact, is not indicated in any way, even though one does have to take it out, periodically, to pee. Suits have to be tailored to allow for urination, which also has to be done in such a way that nobody notices. The fly (which is invisible) is a bourgeois innovation, much unlike earlier aristocratic styles, such as the European codpiece, that often drew explicit attention to the genital region. This is the one part of the male body whose contours are entirely effaced. If hiding something is a way of declaring it a form of power, then hiding the male genitals is a way of declaring masculinity itself a form of power. It’s not just that the tie sits on precisely the spot that, in women’s formal wear, tends to be the most sexualized (the cleavage). A tie resembles a penis in shape, and points directly at it. Couldn’t we say that a tie is really a symbolic displacement of the penis, only an intellectualized penis, dangling not from one’s crotch but from one’s head, chosen from among an almost infinite variety of other ties by an act of mental will?
+                    </p>
+                </div>
+                <div class="section-para">
+                    <p>
+                        Hey, this would explain a lot—why men who wear bow ties are universally taken to be nerds, for example. True, a bow tie could be taken for a pair of testicles. But even so, bow ties are small, and they point in entirely the wrong direction. Mafiosi wear ties that are too fat and colorful; dissipated sophisticates wear thin ties; cowboys wear string ties that produce the effect you might expect from wearing a bow tie and a regular tie at the same time—ordinarily, this would be too unsubtle, but cowboys are mythic he-men who can get away with it. (James Bond can also get away with a bow tie, but then he’s basically just a giant penis anyway.)
+                    </p>
+
+                    <p>
+                        Professional women have faced endless problems over what to wear around their necks. Wearing a tie is considered sexually provocative, threatening. It’s telling that this is the only aspect of traditional male attire women have not been allowed to adopt. In the 1980s and 1990s, there was some effort to develop flouncy bows as an alternative, but that didn’t really work out. The expedient today is not to put anything at all in the open space revealed by the jacket, and just let the absence speak for itself.
+                    </p>
+
+                    <p>
+                        You can take it from here. But let me end with a last observation about gender. As an anthropologist, I am aware that one of the most common features of patriarchy—and this is true in a surprising number of places, from Africa to Sweden to New Guinea—is some idea that women produce naturally (they bear children) and that men produce culturally (they create society). Stated outright, this is an obvious lie—pretty much everywhere you go you can find women doing most of the work of producing society too. So the message of the patriarchs has to be communicated obliquely. And I suspect that traditional formal clothing is one such statement.
+                    </p>
+
+                    <p>
+                        Think of it this way: if none of us wore any clothes, then it would be the male genitalia sticking out visibly, while women’s would remain largely hidden. Maybe the entire point of formal attire to invert this possibility, to say, “Yes, in nature, it is women who have mysterious hidden powers of creation, but once we get all dressed and civilized, it’s precisely the other way around.”
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-7"></div>
+    <div class="section section-8">
+        <div class="section-main">
+            <div class="section-text-container">
+                <div class="section-para">
+                     <p>
+                         it’s also why the way to show that something is truly powerful is to hide it, to render it invisible, ineffable, unknowable, utterly featureless and abstract. That which is unknown, Thomas Hobbes once remarked, is for that reason unlimited. It could be anything; therefore, you have to be prepared to assume it could do anything as well.
+                    </p>
+
+                     <p>
+                        I suggest a simple formula: To express power through display is to say to those over whom one exercises it, “Behold, see how I have been treated. I have been treated this way because of who I am. Now you, too, must treat me this way.” Kings cover themselves with gold as a way of saying that you must cover them with gold as well. To refuse any such display, in contrast, is to say, “You simply have no idea what I am capable of.”
+                    </p>
+
+                    <p>
+                        If this formula is true, the generic quality of formal male clothing, whether donned by factory owners or functionaries, makes some sense. These uniforms define powerful men as active, productive, and potent, and at the same time define them as glyphs of power—disembodied abstractions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-9"></div>
+</div>
+
+
+
+
+<div class="notation notation0 border">
+    <div class="not-main">  
+        <div class="not-header">
+            <div class="not-num not-header-item"><span class="article-section-name">INTRO.</span> | P:1</div>
+            <div class="not-location not-header-item">DAVID GREABER</div>
+            <div class="not-title not-header-item">No. 1 / 30</div>
+        </div>
+        <div class="not-text">
+            <p>
+                David Rolfe Graeber (/ˈɡreɪbər/; February 12, 1961 – September 2, 2020) was an American anthropologist and anarchist activist. His influential work in economic anthropology, particularly his books Debt: The First 5,000 Years (2011) and Bullshit Jobs (2018), and his leading role in the Occupy movement, earned him recognition as one of the foremost anthropologists and left-wing thinkers of his time.
+            </p>
+
+            <p>
+                Born in New York to a working-class Jewish family, Graeber studied at Purchase College and the University of Chicago, where he conducted ethnographic research in Madagascar under Marshall Sahlins and obtained his doctorate in 1996. He was an assistant professor at Yale University from 1998 to 2005, when the university controversially decided not to renew his contract before he was eligible for tenure. Unable to secure another position in the United States, he entered an "academic exile" in England, where he was a lecturer and reader at Goldsmiths' College from 2008 to 2013, and a professor at the London School of Economics from 2013.
+            </p>
+        </div>
+    </div>
+
+    <div class="not-img">
+    </div>
+</div>
+
+<div class="notation notation1 border">
+    <div class="not-main">  
+        <div class="not-header">
+            <div class="not-num not-header-item"><span class="article-section-name">PART 1</span> | P:1</div>
+            <div class="not-location not-header-item">Court Dress</div>
+            <div class="not-title not-header-item">No. 2 / 30</div>
+        </div>
+        <div class="not-text">
+            <p>
+                When Louis came to the throne in 1643, the fashion capital of the world wasn’t Paris, but Madrid. Taste tends to follow power, and for the past two centuries or so Spain had been enjoying its Golden Age, amassing a vast global empire that fueled a booming domestic economy. Spanish style was tight and rigid—both physically and figuratively—and predominantly black. Not only was black considered to be sober and dignified by the staunchly Catholic Habsburg monarchy, but high-quality black dye was extremely expensive, and the Spanish flaunted their wealth by using as much of it as possible. They advertised their imperial ambitions, as well, for Spain imported logwood—a key dyestuff—from its colonies in modern-day Mexico. While Spain’s explorers and armies conquered the New World, her fashions conquered the old one, and Spanish style was adopted at courts throughout Europe.
+            </p>
+
+            <p>
+                Just as French aristocrats imported their fashions from Spain, they bought their tapestries in Brussels, their lace and mirrors in Venice, and their silk in Milan. They didn’t have much choice; France simply wasn’t producing luxury goods of a comparable quality, and it didn’t have the political, economic, or cultural clout to dictate fashions to other countries.
+            </p>
+        </div>
+    </div>
+
+    <div class="not-img"></div>
+</div>
+
+<div class="notation notation2 border">
+    <div class="not-main">  
+        <div class="not-header">
+            <div class="not-num not-header-item"><span class="article-section-name">PART 1</span> | P:2</div>
+            <div class="not-location not-header-item">The Industrial Revolution</div>
+            <div class="not-title not-header-item">No. 3 / 30</div>
+        </div>
+        <div class="not-text">
+            <p>
+                The Industrial Revolution spanned both Georgian and Victorian eras with prosperity benefiting the middle classes most of all. In this dawn of consumerism, this burgeoning class wanted to dress well and now had access to mass-produced garments. Where colour and overly elaborate design adorned women, men’s fashion on the other hand, as pointed out by Timothy Long, was dark and austere in nature. However, colour still managed to find a place in brilliantly patterned waistcoats (a nod to Charles II maybe) and cummerbunds along with smoking jackets and dressing gowns.
+            </p>
+
+            <p>
+                The 1850s welcomed the introduction of shirts with upstanding or turned over collars. Also, the necktie became wider and was looped or tied and fastened with a stickpin. In the 1860s, frock coats got shorter to knee length. With the increase in outdoor activities among the middle and upper classes, the lounge suit increased in popularity as an alternative to its more formal relation. The tale disappeared from the back of the jacket, primarily down to the creation of the smoking jacket, which in turn helped create the dinner jacket or tuxedo. 
+            </p>
+        </div>
+    </div>
+
+    <div class="not-img"></div>
+</div>
+
+<div class="notation notation3 border">
+    <div class="not-main">  
+        <div class="not-header">
+            <div class="not-num not-header-item"><span class="article-section-name">PART 1</span> | P:3</div>
+            <div class="not-location not-header-item">Fox Hunting Attire</div>
+            <div class="not-title not-header-item">No. 4 / 30</div>
+        </div>
+        <div class="not-text">
+            <p>
+                Why is it important? Respect...for three hundred years of sport, art, literature, and the men and women who had the passion, energy, and intellect to formulate and leave us one of the most exhilarating activities known to man. For these reasons it pains me to see the concepts of appropriate attire ignored in many hunting fields today.
+            </p>
+
+            <p>
+                Foxhunting is about the hounds and the quarry; it’s not a stage for man or horse. Its dress code can be described as stratified uniformity—stratified between staff, Master, and field so we can quickly identify who’s who in the heat of battle, and uniformity so that we all maintain our modest place in the overall scheme of the sport.
+            </p>
+
+            <p>
+                The question of what to wear is already rife with confusion and contradiction by learned and acknowledged experts. Add to those ambiguities the fact that hunting attire has evolved over the centuries to take advantage of developments in fabrics, comfort, and safety. And, finally, we must recognize that our North American climate—unlike that of England—ranges from sub-polar to sub-tropical. For these reasons, a “one rule fits all” approach makes no sense.
+            </p>
+        </div>
+    </div>
+
+    <div class="not-img"></div>
+</div>
+
+<div class="notation notation4 border">
+    <div class="not-main">  
+        <div class="not-header">
+            <div class="not-num not-header-item"><span class="article-section-name">PART 1</span> | P:4</div>
+            <div class="not-location not-header-item">Skirts</div>
+            <div class="not-title not-header-item">No. 5 / 30</div>
+        </div>
+        <div class="not-text">
+            <p>
+                During the 19th century, the cut of women's dresses in western culture varied more widely than in any other century. Waistlines started just below the bust (the Empire silhouette) and gradually sank to the natural waist. Skirts started fairly narrow and increased dramatically to the hoopskirt and crinoline-supported styles of the 1860s; then fullness was draped and drawn to the back by means of bustles. In the 1890s the rainy daisy skirt was introduced for walking or sportswear. It had a significantly shorter hemline measuring as much as six inches off the ground and would eventually influence the wider introduction of shorter hemlines in the early 20th century.
+            </p>
+
+            <p>
+                After 1915, ankle-length skirts were not generally worn in the daytime. For the next fifty years fashionable skirts became short (1920s), then long (1930s), then shorter (the War Years with their restrictions on fabric), then long (the "New Look"), then shortest of all from 1967 to 1970, when skirts became as short as possible while avoiding exposure of underwear, which was considered taboo.
+            </p>
+
+            <p>
+                Since the 1970s and the rise of pants/trousers for women as an option for all but the most formal of occasions, no one skirt length has dominated fashion for long, with short and ankle-length styles often appearing side by side in fashion magazines and catalogs. 
+            </p>
+        </div>
+    </div>
+
+    <div class="not-img"></div>
+</div>
+
+
+</body>
+</html>
