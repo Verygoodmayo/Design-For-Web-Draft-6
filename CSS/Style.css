@@ -460,28 +460,28 @@ body {
 .thumb4 {
     top: 65%;
     left: 15%;
-    animation: thumb3Float 4s;
+    animation: thumb4Float 4s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 .thumb5 {
     top: 85%;
     left: 25%;
-    animation: thumb3Float 4s;
+    animation: thumb5Float 4s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 .thumb6 {
     top: 40%;
     left: 30%;
-    animation: thumb3Float 4s;
+    animation: thumb6Float 4s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 .thumb7 {
     top: 65%;
     left: 80%;
-    animation: thumb3Float 4s;
+    animation: thumb7Float 4s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }

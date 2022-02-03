@@ -478,7 +478,78 @@ for (let i = 0; i < thumbs.length; i++) {
 }
 
 
-       
+        // TRACKING THUMBNAIL MOTION - RENDERING SVG LINE
+
+function checkForMove() {
+
+    for (let i = 0; i < thumbs.length; i++)
+    {
+        var thumbTop = $(thumbs[i]).offset().top
+        var thumbLeft = $(thumbs[i]).offset().left
+        var thumbHeight = $(thumbs[i]).height();
+        var thumbWidth = $(thumbs[i]).width();
+        var linkTop = $(links[i]).offset().top;
+        var linkLeft = $(links[i]).offset().left
+        var linkHeight = $(links[i]).height()
+        var linkWidth = $(links[i]).width()
+        var linkRight = linkLeft + linkWidth
+        var linkBottom = linkTop + linkHeight 
+
+        if ($(thumbs[i]).prop('user_default_left') === undefined) {
+            $(thumbs[i]).prop('user_default_left', thumbLeft);
+            $(thumbs[i]).prop('user_is_moving', false);
+    }
+        
+        if (thumbLeft != $(thumbs[i]).prop('user_default_left') && !$(thumbs[i]).prop('user_is_moving')) {
+            
+            $(linksPos[i]).prop('user_is_moving', true);
+
+            var thumbTop = $(thumbs[i]).offset().top
+            var thumbLeft = $(thumbs[i]).offset().left
+            var thumbHeight = $(thumbs[i]).height();
+            var thumbWidth = $(thumbs[i]).width();
+            var thumbBottom = thumbTop + thumbHeight
+            var thumbRight = thumbLeft + thumbWidth
+            var linkTop = $(links[i]).offset().top;
+            var linkLeft = $(links[i]).offset().left
+            var linkHeight = $(links[i]).height()
+            var linkWidth = $(links[i]).width()
+            var linkRight = linkLeft + linkWidth
+            var linkBottom = linkTop + linkHeight
+
+            $(lines[i]).attr({"points":linkRight + 12 + "," + linkBottom
+            + " " + thumbLeft + "," + thumbTop})
+
+            
+
+        }
+
+        if (thumbLeft == $(thumbs[i]).prop('user_default_left') && $(thumbs[i]).prop('user_is_moving')) {
+
+            $(thumbs[i]).prop('user_is_moving', false);
+        }
+
+        if ($(links[i]).prop('user_default_left') === undefined) {
+            $(links[i]).prop('user_default_left', linkLeft);
+            $(links[i]).prop('user_is_moving', false);
+        }
+        
+        if (linkLeft != $(links[i]).prop('user_default_left') && !$(links[i]).prop('user_is_moving')) {
+            
+            $(linksPos[i]).prop('user_is_moving', true);
+        }
+        if (linkLeft == $(links[i]).prop('user_default_left') && $(links[i]).prop('user_is_moving')) {
+            
+            $(links[i]).prop('user_is_moving', false);
+        }
+    }
+    
+        setTimeout(checkForMove, 1);
+    }
+    
+    
+checkForMove();
+
 
 
 
