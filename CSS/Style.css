@@ -7,6 +7,23 @@ body {
     overflow: hidden;
     
 }
+.loading {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    pointer-events: none;
+    background-image: url(../IMG/Loading.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+.loading>img {
+    height: 100%;
+    width: 100%;
+}
 
 .cursor-black {
     cursor: url("data:image/svg+xml,%3Csvg id='eHUuqOGk9oY1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 40 40' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' width='40' height='40'%3E%3Cpath d='M21.38189,88.079403h37.710134v3.02969h-79.134631v-3.02969h38.660707v-136.158802h-38.660707v-3.02969h79.134631v3.02969h-37.710134v136.158802Z' transform='matrix(.360782 0 0 0.269792 12.784362 14.60416)' stroke-width='0'/%3E%3C/svg%3E") 20 20, pointer;
@@ -372,6 +389,8 @@ body {
 }
 .notation4>.not-img {
     background-image: url(../IMG/RevolutionSuit.png);
+    background-size: 120% auto;
+    background-position: center -30px;
 }
 .notation5>.not-img {
     background-image: url(../IMG/FoxHunter.jpg);
@@ -395,8 +414,6 @@ body {
 }
 .link:hover {
     font-family: edit;
-    cursor: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.75 15.75'%3e%3cdefs%3e%3cstyle%3e.cls-1%7bfill:none;stroke:%23000;stroke-miterlimit:10;stroke-width:0.75px;%7d%3c/style%3e%3c/defs%3e%3cg id='Layer_2' data-name='Layer 2'%3e%3cg id='Layer_1-2' data-name='Layer 1'%3e%3ccircle class='cls-1' cx='7.88' cy='7.88' r='7.5'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e"), auto;
-    color: rgb(255, 0, 119);
 }
 
 
@@ -473,7 +490,7 @@ body {
     animation-iteration-count: infinite;
 }
 .thumb6 {
-    top: 40%;
+    top: 45%;
     left: 30%;
     animation: thumb6Float 4s;
     animation-timing-function: linear;
@@ -518,9 +535,39 @@ body {
 }
 .info-container>p {
     position: relative;
-    width: 100%;
+    width: 110%;
     font-family: edit;
-    font-size: 1.7vh;
+    font-size: 1.5vh;
     color: rgb(0, 0, 0);
+    line-height: 2.3vh;
+}
+.info-container>p:nth-of-type(1) {
+    margin-top: -5%;
+    border: solid 1px #000;
+    text-align: center;
+    padding: 10px;
+}
+.info-container>p:nth-of-type(2) {
+    text-align: center;
+    font-family: edit-bold;
+}
+.info-container>div {
+    position: relative;
+    padding-top: 10px;
+    text-align: right;
+    border-top: solid 1px #000;
+    display: flex;
+    flex-direction: row;
+    font-family: edit;
+    font-size: 1.5vh;
+    width: 110%;
     line-height: 2vh;
+}
+.info-container>div>div:nth-of-type(1) {
+    flex: 1;
+    text-align: left;
+}
+.info-container>div>div:nth-of-type(2) {
+    flex: 1;
+    text-align: right;
 }

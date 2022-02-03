@@ -23,6 +23,7 @@ function notModeOn (){
     $(".container").addClass("cursor-white")
     $(".notation-container").css({bottom:"-51%"})
     $(".notation").css({bottom:"0%"})
+    
     console.log("not mode on")
 }
 
@@ -112,6 +113,10 @@ var dynamicButtons =
     dynamicButton3 = false
     ]
 $(document).ready(function(){
+
+    setTimeout(function(){
+        $(".loading").css({opacity:"0"})
+    },2035)
 
     $(".container").addClass("cursor-black")
 
@@ -243,6 +248,7 @@ for (let i = 0; i < links.length; i++) {
                 $(".notation").css({bottom:"-100%"})
                 $(nots[i]).css({bottom:"0%"})
                 $(".container").css({background:bgArray[i]})
+                $(".thumb").css({background:bgArray[i], color:textColors[i]})
                 $(".container>.section>.section-main>.section-text-container>.section-para>p").css({color:textColors[i]})
                 $(".container>.section>.section-main>.section-header").css({color:textColors[i]})
                 $(".container>.section>.section-main>.section-underline").css({background:textColors[i]})
@@ -266,6 +272,7 @@ for (let i = 0; i < links.length; i++) {
                 $(".container>.section>.section-main>.section-text-container>.section-para>p").css({color:"#fff"})
                 $(".container>.section>.section-main>.section-header").css({color:"#fff"})
                 $(".container>.section>.section-main>.section-underline").css({background:"#fff"})
+                $(".thumb").css({background:bgArray[i], color:textColors[i]})
                 $(".title").css({color:"#fff"})
                 $(".author").css({color:"#fff"})
                 $(".date").css({color:"#fff"})
@@ -286,11 +293,11 @@ for (let i = 0; i < links.length; i++) {
                 $(".container>.section>.section-main>.section-text-container>.section-para>p").css({color:"#000"})
                 $(".container>.section>.section-main>.section-header").css({color:"#000"})
                 $(".container>.section>.section-main>.section-underline").css({background:"#000"})
+                $(".thumb").css({background:"#000", color:"#fff"})
                 $(".title").css({color:"#000"})
                 $(".author").css({color:"#000"})
                 $(".date").css({color:"#000"})
                 $(".dynamic-menu").css({opacity:""})
-    
                 n = 1;
                 q = 1;
                 return q;
@@ -327,6 +334,7 @@ for (let i = 0; i < nots.length; i++) {
             $(".author").css({color:"#000"})
             $(".date").css({color:"#000"})
             $(".dynamic-menu").css({opacity:"0"})
+            $(".thumb").css({background:"#000", color:"#fff"})
             n = 1;
             q = 2;
             return q;
@@ -345,6 +353,7 @@ for (let i = 0; i < nots.length; i++) {
             $(".author").css({color:"#fff"})
             $(".date").css({color:"#fff"})
             $(".dynamic-menu").css({opacity:"0"})
+            $(".thumb").css({background:"#000", color:"#fff"})
 
             n = 1;
             q = 2;
