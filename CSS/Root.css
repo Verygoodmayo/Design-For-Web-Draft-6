@@ -3,31 +3,7 @@
     --columns: 1fr 0.5fr 1fr;
     --rows: 1fr 1fr 1fr;
 
-    --not1Top: 200px;
-    --not1Left: 200px;
-    --not1Top1: 400px;
-    --not1left1: 400px;
-    --not1Top2: calc(var(--not1Top) + 0);
-    --not1left2: calc(var(--not1Left) - 6);
-    --not1Top3: calc(var(--not1Top) - 3);
-    --not1left3: calc(var(--not1Left) - 2);
-    --not1Top4: calc(var(--not1Top) - 5);
-    --not1left4: calc(var(--not1Left) + 3);
-    --not1Top5: calc(var(--not1Top) + 0);
-    --not1left5: calc(var(--not1Left) + 0);
-
-    --thumbTop: 15vh;
-    --thumbLeft: 30vh;
-}
-
-@property --thumbTop {
-    syntax: '<number>'; /* <- defined as type number for the transition to work */
-    initial-value: 0;
-    inherits: false;
-  }
-
-@property --thumbLeft {
-    syntax: '<number>'; /* <- defined as type number for the transition to work */
-    initial-value: 0;
-    inherits: false;
+    --dynamicMenuHeight: 40px;
+    --dynamicMenuOffColor: #000;
+    --dynamicMenuOnColor: #fff;
 }
